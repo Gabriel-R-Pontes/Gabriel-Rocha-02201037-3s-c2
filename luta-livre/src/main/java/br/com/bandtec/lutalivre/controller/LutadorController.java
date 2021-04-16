@@ -22,8 +22,8 @@ public class LutadorController {
     }
 
     @GetMapping
-    public ResponseEntity getLutadores(@RequestParam Integer id, @RequestParam Integer forcaGolpe){
-        return ResponseEntity.status(201).build(repository.findAllByIdOrderByForcaGolpeDesc(id, forcaGolpe));
+    public ResponseEntity getLutadores(){
+        return ResponseEntity.status(201).build(repository.findAllNormal());
     }
 
 

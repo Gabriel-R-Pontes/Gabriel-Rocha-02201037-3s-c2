@@ -9,12 +9,9 @@ import java.util.List;
 
 public interface LutadorRepository extends JpaRepository<Lutador, Integer> {
 
-    List<Lutador> findAllByIdOrderByForcaGolpeDesc(Integer id);
 
 
-    List<Lutador> findAllById(Iterable<Integer> id);
-
-
-    @Query
+    @Query("select l from Lutador l order by l.forcaGolpe desc")
+    List<Lutador> findAllNormal();
 
 }
